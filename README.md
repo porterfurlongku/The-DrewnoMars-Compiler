@@ -1,6 +1,6 @@
 # DrewnoMarsCompiler
 
-DrewnoMarsCompiler is a custom compiler written in C for a simplified programming language, designed to demonstrate basic compiler construction and language design principles. This README provides an overview of the compiler, including its features, installation, usage, and a detailed explanation of the AST (Abstract Syntax Tree) implementation.
+DrewnoMarsCompiler is a custom compiler written in C++ for a simplified programming language, designed to demonstrate basic compiler construction and language design principles. This README provides an overview of the compiler, including its features, installation, usage, and a detailed explanation of the AST (Abstract Syntax Tree) implementation.
 
 ## Features
 
