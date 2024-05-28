@@ -79,3 +79,32 @@ The AST is a crucial component of the DrewnoMarsCompiler, representing the hiera
 - **BoolTypeNode**: Represents the `bool` type.
 - **PerfectTypeNode**: Represents a custom type with sub-types.
 
+## Example Code
+
+Below is an example program written in the DrewnoMarsCompiler language:
+
+```drewno
+main: () void{
+    while(false){
+        a: int = 1;
+        give a;
+        give "\n";
+    }
+    if(true){
+        a: int = 1;
+        give a;
+        give "\n";
+    }
+    if(false){
+        a: int = 1;
+    } else {
+        a: int = 1;
+        a++;
+        give a;
+        give "\n";
+        a--;
+        give a;
+    }
+}
+
+
