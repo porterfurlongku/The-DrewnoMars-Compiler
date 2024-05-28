@@ -25,7 +25,7 @@ To install and run the DrewnoMarsCompiler, follow these steps:
    gcc -o DrewnoMarsCompiler DrewnoMarsCompiler.c
 3. **Run the Compiler**:  Use the compiled compiler to execute a DrewnoMarsCompiler program.
    ```sh
-   ./DrewnoMarsCompiler example.drewno
+   ./DrewnoMarsCompiler example.dm
 
 ## Usage
 
