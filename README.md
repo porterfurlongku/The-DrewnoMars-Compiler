@@ -20,7 +20,7 @@ To install and run the DrewnoMarsCompiler, follow these steps:
    git clone https://github.com/porterfurlongku/DrewnoMarsCompiler.git
    cd DrewnoMarsCompiler
 
-2. **Compile the Compiler**: Use a C compiler to compile the DrewnoMarsCompiler source code.
+2. **Compile the Compiler**: Use a C++ compiler to compile the DrewnoMarsCompiler source code.
    ```sh
    gcc -o DrewnoMarsCompiler DrewnoMarsCompiler.c
 3. **Run the Compiler**:  Use the compiled compiler to execute a DrewnoMarsCompiler program.
