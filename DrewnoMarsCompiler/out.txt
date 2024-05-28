@@ -1,0 +1,188 @@
+g++ -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Wuninitialized -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wsign-conversion -Wsign-promo -Wstrict-overflow=5 -Wundef -Werror -Wno-unused -Wno-unused-parameter -Wno-sign-compare -Wno-sign-conversion -Wno-switch-default -g -std=c++14 -MMD -MP -c -o parser.o parser.cc
+In file included from drewno_mars.yy:13,
+                 from parser.cc:41:
+tokens.hpp:11:23: error: expected ‘)’ before ‘*’ token
+   11 |         Token(Position * pos, int kindIn);
+      |              ~        ^~
+      |                       )
+tokens.hpp:16:15: error: ‘Position’ does not name a type
+   16 |         const Position * pos() const;
+      |               ^~~~~~~~
+tokens.hpp:18:15: error: ‘Position’ does not name a type
+   18 |         const Position * myPos;
+      |               ^~~~~~~~
+tokens.hpp:20:19: error: non-static const member ‘const int jeff::Token::myKind’ in class without a constructor [-Werror=uninitialized]
+   20 |         const int myKind;
+      |                   ^~~~~~
+tokens.hpp:25:25: error: expected ‘)’ before ‘*’ token
+   25 |         IDToken(Position * posIn, std::string valIn);
+      |                ~        ^~
+      |                         )
+tokens.hpp:35:26: error: expected ‘)’ before ‘*’ token
+   35 |         StrToken(Position * posIn, std::string valIn);
+      |                 ~        ^~
+      |                          )
+tokens.hpp:44:29: error: expected ‘)’ before ‘*’ token
+   44 |         IntLitToken(Position * posIn, int numIn);
+      |                    ~        ^~
+      |                             )
+tokens.hpp:48:19: error: non-static const member ‘const int jeff::IntLitToken::myNum’ in class without a constructor [-Werror=uninitialized]
+   48 |         const int myNum;
+      |                   ^~~~~
+In file included from parser.cc:41:
+drewno_mars.yy:53:17: error: ‘Token’ in namespace ‘drewno_mars’ does not name a type
+   53 |    drewno_mars::Token*                         transToken;
+      |                 ^~~~~
+drewno_mars.yy:54:17: error: ‘Token’ in namespace ‘drewno_mars’ does not name a type
+   54 |    drewno_mars::Token*                         lexeme;
+      |                 ^~~~~
+drewno_mars.yy:55:17: error: ‘IDToken’ in namespace ‘drewno_mars’ does not name a type
+   55 |    drewno_mars::IDToken*                       transIDToken;
+      |                 ^~~~~~~
+drewno_mars.yy:56:17: error: ‘IntLitToken’ in namespace ‘drewno_mars’ does not name a type; did you mean ‘IntLitNode’?
+   56 |    drewno_mars::IntLitToken*                   transIntToken;
+      |                 ^~~~~~~~~~~
+      |                 IntLitNode
+drewno_mars.yy:57:17: error: ‘IntLitToken’ in namespace ‘drewno_mars’ does not name a type; did you mean ‘IntLitNode’?
+   57 |    drewno_mars::IntLitToken*                   transShortToken;
+      |                 ^~~~~~~~~~~
+      |                 IntLitNode
+drewno_mars.yy:58:17: error: ‘StrToken’ in namespace ‘drewno_mars’ does not name a type
+   58 |    drewno_mars::StrToken*                      transStrToken;
+      |                 ^~~~~~~~
+In file included from drewno_mars.yy:41:
+scanner.hpp: In member function ‘int drewno_mars::Scanner::makeBareToken(int)’:
+scanner.hpp:37:23: error: ‘drewno_mars::Parser::semantic_type’ {aka ‘union drewno_mars::Parser::value_type’} has no member named ‘lexeme’
+   37 |         this->yylval->lexeme = new Token(pos, tagIn);
+      |                       ^~~~~~
+scanner.hpp:37:36: error: expected type-specifier before ‘Token’
+   37 |         this->yylval->lexeme = new Token(pos, tagIn);
+      |                                    ^~~~~
+drewno_mars.yy: In member function ‘virtual int drewno_mars::Parser::parse()’:
+drewno_mars.yy:203:66: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  203 |                   Position * p = new Position($1->pos(), $2->pos());
+      |                                                                  ^~~       
+      |                                                                  transType
+drewno_mars.yy:204:49: error: expected type-specifier before ‘PerfectTypeNode’
+  204 |                   $$ = new PerfectTypeNode(p, $2);
+      |                                                 ^~             
+drewno_mars.yy:209:80: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  209 |                   $$ = new IntTypeNode($1->pos());
+      |                                                                                ^         
+      |                                                                                transType
+drewno_mars.yy:213:81: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  213 |                   $$ = new BoolTypeNode($1->pos());
+      |                                                                                 ^         
+      |                                                                                 transType
+drewno_mars.yy:217:81: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  217 |                   $$ = new VoidTypeNode($1->pos());
+      |                                                                                 ^         
+      |                                                                                 transType
+drewno_mars.yy:239:98: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  239 |                   auto pos = new Position($1->pos(), $9->pos());
+      |                                                                                                  ^         
+      |                                                                                                  transType
+drewno_mars.yy:265:110: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  265 |                   const Position * pos = new Position($1->pos(), $2->pos());
+      |                                                                                                              ^         
+      |                                                                                                              transType
+drewno_mars.yy:286:72: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  286 |                   const Position * p = new Position($1->pos(), $7->pos());
+      |                                                                        ^~~       
+      |                                                                        transType
+drewno_mars.yy:286:111: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  286 |                   const Position * p = new Position($1->pos(), $7->pos());
+      |                                                                                                               ^         
+      |                                                                                                               transType
+drewno_mars.yy:291:72: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  291 |                   const Position * p = new Position($1->pos(), $7->pos());
+      |                                                                        ^~~       
+      |                                                                        transType
+drewno_mars.yy:291:111: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  291 |                   const Position * p = new Position($1->pos(), $7->pos());
+      |                                                                                                               ^         
+      |                                                                                                               transType
+drewno_mars.yy:296:73: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  296 |                   const Position * p = new Position($1->pos(), $11->pos());
+      |                                                                         ^~~       
+      |                                                                         transType
+drewno_mars.yy:296:112: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  296 |                   const Position * p = new Position($1->pos(), $11->pos());
+      |                                                                                                                ^         
+      |                                                                                                                transType
+drewno_mars.yy:311:109: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  311 |                   const Position * p = new Position($1->pos(), $2->pos());
+      |                                                                                                             ^         
+      |                                                                                                             transType
+drewno_mars.yy:316:109: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  316 |                   const Position * p = new Position($1->pos(), $2->pos());
+      |                                                                                                             ^         
+      |                                                                                                             transType
+drewno_mars.yy:321:72: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  321 |                   const Position * p = new Position($1->pos(), $2->pos());
+      |                                                                        ^~~       
+      |                                                                        transType
+drewno_mars.yy:326:72: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  326 |                   const Position * p = new Position($1->pos(), $2->pos());
+      |                                                                        ^~~       
+      |                                                                        transType
+drewno_mars.yy:331:72: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  331 |                   const Position * p = new Position($1->pos(), $2->pos());
+      |                                                                        ^~~       
+      |                                                                        transType
+drewno_mars.yy:336:83: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  336 |                   $$ = new ReturnStmtNode($1->pos(), nullptr);
+      |                                                                                   ^         
+      |                                                                                   transType
+drewno_mars.yy:340:81: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  340 |                   $$ = new ExitStmtNode($1->pos());
+      |                                                                                 ^         
+      |                                                                                 transType
+drewno_mars.yy:409:72: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  409 |                   const Position * p = new Position($1->pos(), $2->pos());
+      |                                                                        ^~~       
+      |                                                                        transType
+drewno_mars.yy:414:72: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  414 |                   const Position * p = new Position($1->pos(), $2->pos());
+      |                                                                        ^~~       
+      |                                                                        transType
+drewno_mars.yy:422:109: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  422 |                   const Position * p = new Position($1->pos(), $3->pos());
+      |                                                                                                             ^         
+      |                                                                                                             transType
+drewno_mars.yy:429:109: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  429 |                   const Position * p = new Position($1->pos(), $4->pos());
+      |                                                                                                             ^         
+      |                                                                                                             transType
+drewno_mars.yy:449:94: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transIntToken’
+  449 |                   { $$ = new IntLitNode($1->pos(), $1->num()); }
+      |                                                                                              ^            
+drewno_mars.yy:449:136: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transIntToken’
+  449 |                   { $$ = new IntLitNode($1->pos(), $1->num()); }
+      |                                                                                                                                        ^            
+drewno_mars.yy:451:94: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transStrToken’
+  451 |                   { $$ = new StrLitNode($1->pos(), $1->str()); }
+      |                                                                                              ^            
+drewno_mars.yy:451:136: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transStrToken’
+  451 |                   { $$ = new StrLitNode($1->pos(), $1->str()); }
+      |                                                                                                                                        ^            
+drewno_mars.yy:453:92: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  453 |                   { $$ = new TrueNode($1->pos()); }
+      |                                                                                            ^         
+      |                                                                                            transType
+drewno_mars.yy:455:93: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  455 |                   { $$ = new FalseNode($1->pos()); }
+      |                                                                                             ^         
+      |                                                                                             transType
+drewno_mars.yy:457:93: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transToken’; did you mean ‘transType’?
+  457 |                   { $$ = new MagicNode($1->pos()); }
+      |                                                                                             ^         
+      |                                                                                             transType
+drewno_mars.yy:476:61: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transIDToken’
+  476 |                   const Position * pos = $1->pos();
+      |                                                             ^           
+drewno_mars.yy:477:78: error: ‘union drewno_mars::Parser::value_type’ has no member named ‘transIDToken’
+  477 |                   $$ = new IDNode(pos, $1->value());
+      |                                                                              ^           
+cc1plus: all warnings being treated as errors
+make: *** [Makefile:35: parser.o] Error 1
